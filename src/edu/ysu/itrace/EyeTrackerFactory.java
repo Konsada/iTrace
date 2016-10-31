@@ -16,7 +16,8 @@ public class EyeTrackerFactory {
     public enum TrackerType {
         SYSTEM_MOUSE_TRACKER,
         TOBII_TRACKER,
-        EYEX_TRACKER
+        EYEX_TRACKER,
+        PCEYEMINI_TRACKER
     }
 
     /**
@@ -30,6 +31,7 @@ public class EyeTrackerFactory {
         result.put(TrackerType.SYSTEM_MOUSE_TRACKER, "System Mouse Tracker");
         result.put(TrackerType.TOBII_TRACKER, "Tobii Tracker");
         result.put(TrackerType.EYEX_TRACKER, "EyeX Tracker");
+        result.put(TrackerType.PCEYEMINI_TRACKER, "PCEyeMini Tracker");
         return result;
     }
 
@@ -62,6 +64,8 @@ public class EyeTrackerFactory {
                 return (IEyeTracker) new TobiiTracker();
             case EYEX_TRACKER:
             	return (IEyeTracker) new EyeXTracker();
+            case PCEYEMINI_TRACKER:
+            	return (IEyeTracker) new PCEyeMiniEyeXTracker();
             default:
                 return null;
             }

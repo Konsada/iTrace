@@ -117,6 +117,7 @@ public class EyeXTracker implements IEyeTracker {
     private double xDrift = 0, yDrift = 0;
 
     static { System.loadLibrary("libEyeXTracker"); }
+    //static { System.load("C:\\Users\\keons_000\\Documents\\CS423\\lib\\x64\\Tobii.EyeX.Client.dll");}
 
     public EyeXTracker() throws EyeTrackerConnectException,
                                  IOException {
